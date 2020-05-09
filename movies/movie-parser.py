@@ -18,7 +18,8 @@ if __name__ == "__main__":
     batch = 500
 
     with open(readPath + 'movies_metadata.csv') as movies_metadataCSVFile:
-        movies_metadataCSV = csv.DictReader(movies_metadataCSVFile, delimiter=",")
+
+        movies_metadataCSV = csv.DictReader(x.replace('\0', '') for x in movies_metadataCSVFile)
 
         # movies.csv
         movieCSV = open(writePath + 'movie.csv', 'w')
