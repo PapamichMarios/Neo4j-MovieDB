@@ -13,14 +13,15 @@ import ast
 import csv
 
 if __name__ == "__main__":
-    path = './'
+    readPath = './input/'
+    writePath = './labels-relationships/'
     batch = 500
 
-    with open(path + 'movies_metadata.csv') as movies_metadataCSVFile:
+    with open(readPath + 'movies_metadata.csv') as movies_metadataCSVFile:
         movies_metadataCSV = csv.DictReader(movies_metadataCSVFile, delimiter=",")
 
         # movies.csv
-        movieCSV = open(path + 'movie.csv', 'w')
+        movieCSV = open(writePath + 'movie.csv', 'w')
         fieldnames = ['adult', 'budget', 'homepage', 'tmdb_id', 'imdb_id', 'original_language', 'original_title',
                       'overview', 'popularity', 'poster_path', 'release_date', 'revenue', 'runtime', 'status',
                       'tagline', 'title', 'video', 'vote_average', 'vote_count']
@@ -28,61 +29,61 @@ if __name__ == "__main__":
         movieWriter.writeheader()
 
         # movie_collection.csv
-        movie_collectionCSV = open(path + 'movie_collection.csv', 'w')
+        movie_collectionCSV = open(writePath + 'movie_collection.csv', 'w')
         fieldnames = ['movie_id', 'collection_id']
         movie_collectionWriter = csv.DictWriter(movie_collectionCSV, fieldnames=fieldnames)
         movie_collectionWriter.writeheader()
 
         # collection.csv
-        collectionCSV = open(path + 'collection.csv', 'w')
+        collectionCSV = open(writePath + 'collection.csv', 'w')
         fieldnames = ['id', 'name', 'poster_path', 'backdrop_path']
         collectionWriter = csv.DictWriter(collectionCSV, fieldnames=fieldnames)
         collectionWriter.writeheader()
 
         # genre.csv
-        genreCSV = open(path + 'genre.csv', 'w')
+        genreCSV = open(writePath + 'genre.csv', 'w')
         fieldnames = ['name', 'id']
         genreWriter = csv.DictWriter(genreCSV, fieldnames=fieldnames)
         genreWriter.writeheader()
 
         # movie_genre.csv
-        movie_genreCSV = open(path + 'movie_genre.csv', 'w')
+        movie_genreCSV = open(writePath + 'movie_genre.csv', 'w')
         fieldnames = ['movie_id', 'genre_id']
         movie_genreWriter = csv.DictWriter(movie_genreCSV, fieldnames=fieldnames)
         movie_genreWriter.writeheader()
 
         # production_company.csv
-        companyCSV = open(path + 'production_company.csv', 'w')
+        companyCSV = open(writePath + 'production_company.csv', 'w')
         fieldnames = ['id', 'name']
         companyWriter = csv.DictWriter(companyCSV, fieldnames=fieldnames)
         companyWriter.writeheader()
 
         # movie_company.csv
-        movie_companyCSV = open(path + 'movie_company.csv', 'w')
+        movie_companyCSV = open(writePath + 'movie_company.csv', 'w')
         fieldnames = ['movie_id', 'company_id']
         movie_companyWriter = csv.DictWriter(movie_companyCSV, fieldnames=fieldnames)
         movie_companyWriter.writeheader()
 
         # production_country.csv
-        countryCSV = open(path + 'production_country.csv', 'w')
+        countryCSV = open(writePath + 'production_country.csv', 'w')
         fieldnames = ['iso_3166_1', 'name']
         countryWriter = csv.DictWriter(countryCSV, fieldnames=fieldnames)
         countryWriter.writeheader()
 
         # movie_country.csv
-        movie_countryCSV = open(path + 'movie_country.csv', 'w')
+        movie_countryCSV = open(writePath + 'movie_country.csv', 'w')
         fieldnames = ['movie_id', 'country_id']
         movie_countryWriter = csv.DictWriter(movie_countryCSV, fieldnames=fieldnames)
         movie_countryWriter.writeheader()
 
         # spoken_language.csv
-        languageCSV = open(path + 'spoken_language.csv', 'w')
+        languageCSV = open(writePath + 'spoken_language.csv', 'w')
         fieldnames = ['iso_639_1', 'name']
         languageWriter = csv.DictWriter(languageCSV, fieldnames=fieldnames)
         languageWriter.writeheader()
 
         # movie_language.csv
-        movie_languageCSV = open(path + 'movie_language.csv', 'w')
+        movie_languageCSV = open(writePath + 'movie_language.csv', 'w')
         fieldnames = ['movie_id', 'language_id']
         movie_languageWriter = csv.DictWriter(movie_languageCSV, fieldnames=fieldnames)
         movie_languageWriter.writeheader()
@@ -222,26 +223,26 @@ if __name__ == "__main__":
         languageCSV.close()
         movie_languageCSV.close()
 
-    with open(path + 'credits.csv') as creditsCSVFile:
+    with open(readPath + 'credits.csv') as creditsCSVFile:
         creditsCSV = csv.DictReader(creditsCSVFile, delimiter=",")
 
         # cast.csv
-        castCSV = open(path + 'cast.csv', 'w')
+        castCSV = open(writePath + 'cast.csv', 'w')
         fieldnames = ['cast_id', 'character', 'credit_id', 'gender', 'id', 'name', 'order', 'profile_path']
         castWriter = csv.DictWriter(castCSV, fieldnames=fieldnames)
 
         # movie_cast.csv
-        movie_castCSV = open(path + 'movie_cast.csv', 'w')
+        movie_castCSV = open(writePath + 'movie_cast.csv', 'w')
         fieldnames = ['movie_id', 'cast_id']
         movie_castWriter = csv.DictWriter(movie_castCSV, fieldnames=fieldnames)
 
         # crew.csv
-        crewCSV = open(path + 'crew.csv', 'w')
+        crewCSV = open(writePath + 'crew.csv', 'w')
         fieldnames = ['credit_id', 'department', 'gender', 'id', 'job', 'name', 'profile_path']
         crewWriter = csv.DictWriter(crewCSV, fieldnames=fieldnames)
 
         # movie_crew.csv
-        movie_crewCSV = open(path + 'movie_crew.csv', 'w')
+        movie_crewCSV = open(writePath + 'movie_crew.csv', 'w')
         fieldnames = ['movie_id', 'crew_id']
         movie_crewWriter = csv.DictWriter(movie_crewCSV, fieldnames=fieldnames)
 
