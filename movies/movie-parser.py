@@ -210,7 +210,7 @@ if __name__ == "__main__":
         countryWriter.writerows(countries)
 
         languages = list({x['iso_639_1']: x for x in language_data}.values())
-        languageWriter.writerows(language_data)
+        languageWriter.writerows(languages)
 
     with open(readPath + 'credits.csv') as creditsCSVFile,          \
          open(writePath + 'cast.csv', 'w') as castCSV,              \
