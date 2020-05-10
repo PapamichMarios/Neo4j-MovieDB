@@ -10,7 +10,11 @@
 
 # Populating DB
 
+- Copy & paste the resulting .csv files from parser, to the neo4j import folder
+- Run the following script
+
 ```
+// Set constraints on label keys
 CREATE CONSTRAINT ON (m:Movie) ASSERT m.tmdb_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Company) ASSERT c.id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Country) ASSERT c.code IS UNIQUE;
@@ -19,8 +23,9 @@ CREATE CONSTRAINT ON (c:Cast) ASSERT c.credit_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Crew) ASSERT c.credit_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Collection) ASSERT c.id IS UNIQUE;
 CREATE CONSTRAINT ON (g:Genre) ASSERT g.id IS UNIQUE;
-CREATE CONSTRAINT ON (r:Rating) ASSERT r.movie_id IS UNIQUE;
+CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY
 
+// Labels
 LOAD CSV WITH HEADERS FROM 'file:///movie.csv' AS row
 CREATE 
 (m:Movie { 
@@ -64,6 +69,7 @@ CREATE
 })
 RETURN count(c);
 
+:auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///cast.csv' AS row
 CREATE 
 (c:Cast { 
@@ -78,6 +84,7 @@ CREATE
 })
 RETURN count(c);
 
+:auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///crew.csv' AS row
 CREATE 
 (c:Crew { 
@@ -114,5 +121,18 @@ CREATE
     name: row.name
 })
 RETURN count(l);
+
+:auto USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 'file:///rating.csv' AS row
+CREATE 
+(r:Rating { 
+    user_id: toInteger(row.user_id),
+    movie_id: toInteger(row.movie_id),
+    rating: toFloat(row.rating),
+    timestamp: row.timestamp
+})
+RETURN count(r)
+
+// Relationships
 
 ```
