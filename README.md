@@ -13,6 +13,7 @@
 - Copy & paste the resulting .csv files from parser, to the neo4j import folder
 - Run the following script
 
+- Set constraints on label keys
 ```
 // Set constraints on label keys
 CREATE CONSTRAINT ON (m:Movie) ASSERT m.tmdb_id IS UNIQUE;
@@ -26,8 +27,10 @@ CREATE CONSTRAINT ON (g:Genre) ASSERT g.id IS UNIQUE;
 CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY
 
 CREATE INDEX ON :Rating(movie_id)
+```
 
-// Labels
+- Populate Labels
+```
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie.csv' AS row
 CREATE 
@@ -140,8 +143,10 @@ CREATE
     timestamp: row.timestamp
 })
 RETURN count(r);
+```
 
-// Relationships
+- Relationships
+```
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_cast.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (cast:Cast {credit_id: row.cast_id})
@@ -179,6 +184,6 @@ CREATE (movie)-[:SPEAKS]->(language);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_rating.csv' AS row
-MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (rating:Rating {movie_id: toInteger(row.movie_id)})
+MATCH (movie:Movie {tmdb_id: toInteger(row.tmdb_id)}), (rating:Rating {movie_id: toInteger(row.movie_id)})
 CREATE (movie)-[:HAS_RATING]->(rating);
 ```
