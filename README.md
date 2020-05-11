@@ -25,6 +25,8 @@ CREATE CONSTRAINT ON (c:Collection) ASSERT c.id IS UNIQUE;
 CREATE CONSTRAINT ON (g:Genre) ASSERT g.id IS UNIQUE;
 CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY
 
+CREATE INDEX ON :Rating(movie_id)
+
 // Labels
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie.csv' AS row
@@ -137,47 +139,46 @@ CREATE
     rating: toFloat(row.rating),
     timestamp: row.timestamp
 })
-RETURN count(r)
+RETURN count(r);
 
 // Relationships
-
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_cast.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (cast:Cast {credit_id: row.cast_id})
-CREATE (cast)-[:PLAYED_IN]->(movie)
+CREATE (cast)-[:PLAYED_IN]->(movie);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_crew.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (crew:Crew {credit_id: row.crew_id})
-CREATE (crew)-[:WORKED_AT]->(movie)
+CREATE (crew)-[:WORKED_AT]->(movie);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_collection.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (collection:Collection {id: toInteger(row.collection_id)})
-CREATE (movie)-[:BELONGS_TO]->(collection)
+CREATE (movie)-[:BELONGS_TO]->(collection);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_genre.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (genre:Genre {id: toInteger(row.genre_id)})
-CREATE (movie)-[:BELONGS_TO]->(genre)
+CREATE (movie)-[:BELONGS_TO]->(genre);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_company.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (company:Company {id: toInteger(row.company_id)})
-CREATE (movie)-[:PRODUCED_BY]->(company)
+CREATE (movie)-[:PRODUCED_BY]->(company);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_country.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (country:Country {code: row.country_id})
-CREATE (movie)-[:PRODUCED_BY]->(country)
+CREATE (movie)-[:PRODUCED_BY]->(country);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_language.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (language:Language {code: row.language_id})
-CREATE (movie)-[:SPEAKS]->(language)
+CREATE (movie)-[:SPEAKS]->(language);
 
 :auto USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM 'file:///movie_rating.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.movie_id)}), (rating:Rating {movie_id: toInteger(row.movie_id)})
-CREATE (movie)-[:HAS_RATING]->(rating)
+CREATE (movie)-[:HAS_RATING]->(rating);
 ```
