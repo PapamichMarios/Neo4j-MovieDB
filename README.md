@@ -24,9 +24,9 @@ CREATE CONSTRAINT ON (c:Cast) ASSERT c.credit_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Crew) ASSERT c.credit_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Collection) ASSERT c.id IS UNIQUE;
 CREATE CONSTRAINT ON (g:Genre) ASSERT g.id IS UNIQUE;
-CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY
+CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY;
 
-CREATE INDEX ON :Rating(movie_id)
+CREATE INDEX ON :Rating(movie_id);
 ```
 
 - Populate Labels
@@ -36,7 +36,7 @@ LOAD CSV WITH HEADERS FROM 'file:///movie.csv' AS row
 CREATE 
 (m:Movie { 
     adult: row.adult, 
-    budget: toInteger(row.budget), 
+    budget: toFloat(row.budget), 
     homepage: row.homepage, 
     tmdb_id: toInteger(row.tmdb_id), 
     imdb_id: row.imdb_id, 
@@ -45,8 +45,8 @@ CREATE
     overview: row.overview,
     popularity: toFloat(row.popularity),
     poster_path: row.poster_path,
-    release_date: row.release_date,
-    revenue: toInteger(row.revenue),
+    release_date: date(row.release_date),
+    revenue: toFloat(row.revenue),
     runtime: toFloat(row.runtime), 
     status: row.status, 
     tagline: row.tagline,
