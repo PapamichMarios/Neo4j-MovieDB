@@ -218,6 +218,7 @@ if __name__ == "__main__":
          open(writePath + 'crew.csv', 'w') as crewCSV,              \
          open(writePath + 'movie_crew.csv', 'w') as movie_crewCSV:
 
+
         creditsCSV = csv.DictReader(creditsCSVFile, delimiter=",")
 
         # cast.csv
@@ -257,7 +258,7 @@ if __name__ == "__main__":
                 cast_data.append(cast)
 
                 movie_cast = {
-                    'movie_id': movie['tmdb_id'],
+                    'movie_id': cast['id'],
                     'cast_id': cast['credit_id']
                 }
                 movie_cast_data.append(movie_cast)
@@ -268,7 +269,7 @@ if __name__ == "__main__":
                 crew_data.append(crew)
 
                 movie_crew = {
-                    'movie_id': movie['tmdb_id'],
+                    'movie_id': cast['id'],
                     'crew_id': crew['credit_id']
                 }
                 movie_crew_data.append(movie_crew)
@@ -290,7 +291,7 @@ if __name__ == "__main__":
         casts = list({x['credit_id']: x for x in cast_data}.values())
         castWriter.writerows(casts)
 
-    with open(readPath + 'ratings.csv') as ratingsCSVFile,\
+    with open(readPath + 'ratings_small.csv') as ratingsCSVFile,\
          open(writePath + 'rating.csv', 'w') as ratingCSV:
 
         ratingsCSV = csv.reader(ratingsCSVFile, delimiter=",")
@@ -304,7 +305,7 @@ if __name__ == "__main__":
         for row in ratingsCSV:
             ratingWriter.writerow(row)
 
-    with open(readPath + 'links.csv') as linksCSVFile, \
+    with open(readPath + 'links_small.csv') as linksCSVFile, \
          open(writePath + 'movie_rating.csv', 'w') as movie_ratingCSV:
 
         linksCSV = csv.DictReader(linksCSVFile, delimiter=",")
