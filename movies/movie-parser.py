@@ -258,7 +258,7 @@ if __name__ == "__main__":
                 cast_data.append(cast)
 
                 movie_cast = {
-                    'movie_id': cast['id'],
+                    'movie_id': row['id'],
                     'cast_id': cast['credit_id']
                 }
                 movie_cast_data.append(movie_cast)
@@ -269,7 +269,7 @@ if __name__ == "__main__":
                 crew_data.append(crew)
 
                 movie_crew = {
-                    'movie_id': cast['id'],
+                    'movie_id': row['id'],
                     'crew_id': crew['credit_id']
                 }
                 movie_crew_data.append(movie_crew)
