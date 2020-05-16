@@ -213,31 +213,24 @@ if __name__ == "__main__":
         languageWriter.writerows(languages)
 
     with open(readPath + 'credits.csv') as creditsCSVFile,          \
-         open(writePath + 'cast.csv', 'w') as castCSV,              \
+         open(writePath + 'individual.csv', 'w') as individualCSV,  \
          open(writePath + 'movie_cast.csv', 'w') as movie_castCSV,  \
-         open(writePath + 'crew.csv', 'w') as crewCSV,              \
          open(writePath + 'movie_crew.csv', 'w') as movie_crewCSV:
-
 
         creditsCSV = csv.DictReader(creditsCSVFile, delimiter=",")
 
-        # cast.csv
-        fieldnames = ['cast_id', 'character', 'credit_id', 'gender', 'id', 'name', 'order', 'profile_path']
-        castWriter = csv.DictWriter(castCSV, fieldnames=fieldnames)
-        castWriter.writeheader()
+        # person.csv
+        fieldnames = ['id', 'gender', 'name', 'profile_path']
+        individualWriter = csv.DictWriter(individualCSV, fieldnames=fieldnames)
+        individualWriter.writeheader()
 
         # movie_cast.csv
-        fieldnames = ['movie_id', 'cast_id']
+        fieldnames = ['movie_id', 'cast_id', 'character', 'credit_id']
         movie_castWriter = csv.DictWriter(movie_castCSV, fieldnames=fieldnames)
         movie_castWriter.writeheader()
 
-        # crew.csv
-        fieldnames = ['credit_id', 'department', 'gender', 'id', 'job', 'name', 'profile_path']
-        crewWriter = csv.DictWriter(crewCSV, fieldnames=fieldnames)
-        crewWriter.writeheader()
-
         # movie_crew.csv
-        fieldnames = ['movie_id', 'crew_id']
+        fieldnames = ['movie_id', 'crew_id', 'department', 'job', 'credit_id']
         movie_crewWriter = csv.DictWriter(movie_crewCSV, fieldnames=fieldnames)
         movie_crewWriter.writeheader()
 
@@ -255,22 +248,41 @@ if __name__ == "__main__":
             # casts
             casts = ast.literal_eval(row["cast"])
             for cast in casts:
-                cast_data.append(cast)
+
+                _cast = {
+                    'id': cast['id'],
+                    'gender': cast['gender'],
+                    'name': cast['name'],
+                    'profile_path': cast['profile_path']
+                }
+                cast_data.append(_cast)
 
                 movie_cast = {
                     'movie_id': row['id'],
-                    'cast_id': cast['credit_id']
+                    'cast_id': cast['id'],
+                    'character': cast['character'],
+                    'credit_id': cast['credit_id']
                 }
                 movie_cast_data.append(movie_cast)
 
             # crews
             crews = ast.literal_eval(row["crew"])
             for crew in crews:
-                crew_data.append(crew)
+
+                _crew = {
+                    'id': crew['id'],
+                    'gender': crew['gender'],
+                    'name': crew['name'],
+                    'profile_path': crew['profile_path']
+                }
+                crew_data.append(_crew)
 
                 movie_crew = {
                     'movie_id': row['id'],
-                    'crew_id': crew['credit_id']
+                    'crew_id': crew['id'],
+                    'department': crew['department'],
+                    'job': crew['job'],
+                    'credit_id': crew['credit_id']
                 }
                 movie_crew_data.append(movie_crew)
 
@@ -285,11 +297,9 @@ if __name__ == "__main__":
         movie_castWriter.writerows(movie_cast_data)
         movie_crewWriter.writerows(movie_crew_data)
 
-        crews = list({x['credit_id']: x for x in crew_data}.values())
-        crewWriter.writerows(crews)
-
-        casts = list({x['credit_id']: x for x in cast_data}.values())
-        castWriter.writerows(casts)
+        individual_data = crew_data + cast_data
+        individuals = list({x['id']: x for x in individual_data}.values())
+        individualWriter.writerows(individuals)
 
     with open(readPath + 'ratings_small.csv') as ratingsCSVFile,\
          open(writePath + 'rating.csv', 'w') as ratingCSV:
