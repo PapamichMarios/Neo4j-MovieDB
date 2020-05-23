@@ -1,4 +1,4 @@
-HELP.md
+Movies API/HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
