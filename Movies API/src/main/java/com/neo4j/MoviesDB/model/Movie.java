@@ -1,7 +1,15 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.neo4j.MoviesDB.config.DateConverter;
+import com.neo4j.MoviesDB.config.LocalDateConverter;
 import org.neo4j.ogm.annotation.*;
+import org.neo4j.ogm.annotation.typeconversion.Convert;
+import org.neo4j.ogm.annotation.typeconversion.DateString;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,7 +42,10 @@ public class Movie {
     @Property(name = "poster_path")
     private String posterPath;
 
-//    private Date
+    @Property(name = "release_date")
+//    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Convert(LocalDateConverter.class)
+    private LocalDate releaseDate;
 
     private Double revenue;
 
@@ -57,34 +68,47 @@ public class Movie {
     @Property(name = "vote_count")
     private Double voteCount;
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "BELONGS_TO")
     private Set<Collection> collections = new HashSet<>();
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "PRODUCED_BY")
     private Set<Company> companies = new HashSet<>();
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "PRODUCED_BY")
     private Set<Country> countries = new HashSet<>();
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "BELONGS_TO")
     private Set<Genre> genres = new HashSet<>();
 
+    @JsonIgnoreProperties("movie")
     @Relationship(type = "PLAYED_IN", direction = INCOMING)
-    private Set<Cast> crew = new HashSet<>();
+    private Set<Crew> crew = new HashSet<>();
 
+    @JsonIgnoreProperties("movie")
     @Relationship(type = "WORKED_AT", direction = INCOMING)
     private Set<Cast> cast = new HashSet<>();
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "SPEAKS")
     private Set<Language> spokenLanguages = new HashSet<>();
 
+    @JsonIgnoreProperties("movies")
     @Relationship(type = "HAS_RATING")
     private Set<Rating> ratings = new HashSet<>();
 
     public Movie() {
     }
 
-    public Movie(Long id, String adult, Double budget, String imdbId, String originalLanguage, String originalTitle, String overview, Double popularity, String posterPath, Double revenue, Double runtime, String status, String tagline, String title, Long tmdbId, String video, Double voteAverage, Double voteCount, Set<Collection> collections, Set<Company> companies, Set<Country> countries, Set<Genre> genres, Set<Cast> crew, Set<Cast> cast, Set<Language> spokenLanguages, Set<Rating> ratings) {
+    public Movie(String tagline, String title) {
+        this.tagline = tagline;
+        this.title = title;
+    }
+
+    public Movie(Long id, String adult, Double budget, String imdbId, String originalLanguage, String originalTitle, String overview, Double popularity, String posterPath, LocalDate releaseDate, Double revenue, Double runtime, String status, String tagline, String title, Long tmdbId, String video, Double voteAverage, Double voteCount, Set<Collection> collections, Set<Company> companies, Set<Country> countries, Set<Genre> genres, Set<Crew> crew, Set<Cast> cast, Set<Language> spokenLanguages, Set<Rating> ratings) {
         this.id = id;
         this.adult = adult;
         this.budget = budget;
@@ -94,6 +118,7 @@ public class Movie {
         this.overview = overview;
         this.popularity = popularity;
         this.posterPath = posterPath;
+        this.releaseDate = releaseDate;
         this.revenue = revenue;
         this.runtime = runtime;
         this.status = status;
@@ -289,11 +314,11 @@ public class Movie {
         this.genres = genres;
     }
 
-    public Set<Cast> getCrew() {
+    public Set<Crew> getCrew() {
         return crew;
     }
 
-    public void setCrew(Set<Cast> crew) {
+    public void setCrew(Set<Crew> crew) {
         this.crew = crew;
     }
 
@@ -319,5 +344,13 @@ public class Movie {
 
     public void setRatings(Set<Rating> ratings) {
         this.ratings = ratings;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Country {
 
     private String name;
 
+    @JsonIgnoreProperties("countries")
     @Relationship(type = "PRODUCED_BY", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 

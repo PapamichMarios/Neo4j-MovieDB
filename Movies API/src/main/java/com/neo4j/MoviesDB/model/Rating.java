@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.Property;
@@ -26,6 +27,7 @@ public class Rating {
 
     private String timestamp;
 
+    @JsonIgnoreProperties("ratings")
     @Relationship(type = "HAS_RATING", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 

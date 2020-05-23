@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
 
 @RelationshipEntity(type = "PLAYED_IN")
@@ -15,9 +16,11 @@ public class Cast {
     private String creditId;
 
     @StartNode
+    @JsonIgnoreProperties({"workedAt"})
     private Individual individual;
 
     @EndNode
+    @JsonIgnoreProperties({"cast"})
     private Movie movie;
 
     public Cast() {

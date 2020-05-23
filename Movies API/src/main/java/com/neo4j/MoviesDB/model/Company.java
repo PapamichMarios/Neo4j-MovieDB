@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -19,6 +20,7 @@ public class Company {
 
     private String name;
 
+    @JsonIgnoreProperties("companies")
     @Relationship(type = "PRODUCED_BY", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 

@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.Relationship;
@@ -17,6 +18,7 @@ public class Genre {
 
     private String name;
 
+    @JsonIgnoreProperties("genres")
     @Relationship(type = "BELONGS_TO", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 

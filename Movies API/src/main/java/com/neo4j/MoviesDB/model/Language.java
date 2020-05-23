@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -21,6 +22,7 @@ public class Language {
 
     private String name;
 
+    @JsonIgnoreProperties("spokenLanguages")
     @Relationship(type = "SPEAKS", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 

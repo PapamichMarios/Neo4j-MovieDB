@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.HashSet;
@@ -19,9 +20,11 @@ public class Individual {
 
     private String name;
 
+    @JsonIgnoreProperties("individual")
     @Relationship(type = "PLAYED_IN")
     private Set<Cast> playedIn = new HashSet<>();
 
+    @JsonIgnoreProperties("individual")
     @Relationship(type = "WORKED_AT")
     private Set<Cast> workedAt = new HashSet<>();
 

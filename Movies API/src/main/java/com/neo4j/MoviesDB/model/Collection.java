@@ -1,5 +1,6 @@
 package com.neo4j.MoviesDB.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.HashSet;
@@ -22,6 +23,7 @@ public class Collection {
     @Property(name = "backdrop_path")
     private String backdropPath;
 
+    @JsonIgnoreProperties("collections")
     @Relationship(type = "BELONGS_TO", direction = INCOMING)
     private Set<Movie> movies = new HashSet<>();
 
