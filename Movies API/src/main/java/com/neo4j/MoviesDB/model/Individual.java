@@ -15,9 +15,6 @@ public class Individual {
 
     private Integer gender;
 
-    @Property(name = "person_id")
-    private Long personId;
-
     private String name;
 
     @JsonIgnoreProperties("individual")
@@ -31,10 +28,9 @@ public class Individual {
     public Individual() {
     }
 
-    public Individual(Long id, Integer gender, Long personId, String name) {
+    public Individual(Long id, Integer gender,String name) {
         this.id = id;
         this.gender = gender;
-        this.personId = personId;
         this.name = name;
     }
 
@@ -52,14 +48,6 @@ public class Individual {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public Long getPerson_id() {
-        return personId;
-    }
-
-    public void setPerson_id(Long personId) {
-        this.personId = personId;
     }
 
     public String getName() {
