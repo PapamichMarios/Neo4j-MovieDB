@@ -1,4 +1,4 @@
-package com.neo4j.MoviesDB.result;
+package com.neo4j.MoviesDB.result.Movie;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.neo4j.MoviesDB.config.LocalDateConverter;
@@ -12,11 +12,11 @@ import java.util.Date;
 
 @QueryResult
 public class MovieBasicInfo {
-    String title;
-    String tagline;
+    private String title;
+    private String tagline;
 
     @Convert(LocalDateConverter.class)
-    LocalDate release_date;
+    private LocalDate release_date;
 
     public MovieBasicInfo() {
     }
