@@ -26,6 +26,8 @@ CREATE CONSTRAINT ON (g:Genre) ASSERT g.id IS UNIQUE;
 CREATE CONSTRAINT ON (r:Rating) ASSERT (r.user_id, r.movie_id) IS NODE KEY;
 
 CREATE INDEX ON :Rating(movie_id);
+CREATE INDEX ON :Individual(name);
+CREATE INDEX ON :Movie(release_date);
 ```
 
 - Populate Labels
