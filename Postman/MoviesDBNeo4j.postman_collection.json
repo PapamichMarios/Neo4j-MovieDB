@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "e46508b5-54fb-4670-a10b-fb985c998d5c",
+		"name": "MoviesDBNeo4j",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Query 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query1?name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "Query 2 Director",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query2?name=Tom Hanks&job=Director",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						},
+						{
+							"key": "job",
+							"value": "Director"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 2 Producer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query2?name=Tom Hanks&job=Producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						},
+						{
+							"key": "job",
+							"value": "Producer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 2 Writer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query2?name=Tom Hanks&job=Writer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						},
+						{
+							"key": "job",
+							"value": "Writer"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query3?name=Tom Hanks&dateFrom=1990-10-30&dateTo=2020-10-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						},
+						{
+							"key": "dateFrom",
+							"value": "1990-10-30"
+						},
+						{
+							"key": "dateTo",
+							"value": "2020-10-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 4 Original Language",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query4/original?name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query4",
+						"original"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 4 Language (Node)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query4/spoken?name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query4",
+						"spoken"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query5?k=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query5"
+					],
+					"query": [
+						{
+							"key": "k",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 6 Budget",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query6/budget?k=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query6",
+						"budget"
+					],
+					"query": [
+						{
+							"key": "k",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 6 Revenue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query6/revenue?k=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query6",
+						"revenue"
+					],
+					"query": [
+						{
+							"key": "k",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query7?year=2014",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query7"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2014"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query8?year=2014",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query8"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2014"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query9?year=2014",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query9"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2014"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query10?name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query10"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 11",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query11?name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query11"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query12?k=5&name=Tom Hanks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query12"
+					],
+					"query": [
+						{
+							"key": "k",
+							"value": "5"
+						},
+						{
+							"key": "name",
+							"value": "Tom Hanks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 13",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 14",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query14?yearsInBetween=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query14"
+					],
+					"query": [
+						{
+							"key": "yearsInBetween",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 15",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 16 Best",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query16/best",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query16",
+						"best"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 16 Worst",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query16/worst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query16",
+						"worst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 17 Best",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query17/best",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query17",
+						"best"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 17 Worst",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query17/worst",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query17",
+						"worst"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 18",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query18"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

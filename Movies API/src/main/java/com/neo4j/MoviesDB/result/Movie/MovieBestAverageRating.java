@@ -6,30 +6,30 @@ import org.springframework.data.neo4j.annotation.QueryResult;
 @QueryResult
 public class MovieBestAverageRating {
 
-    private Movie Movie;
+    private Movie movie;
     private Double best_average_rating;
 
     public MovieBestAverageRating() {
     }
 
     public MovieBestAverageRating(Movie movie, Double best_average_rating) {
-        this.Movie = movie;
+        this.movie = movie;
         this.best_average_rating = best_average_rating;
     }
 
-    public com.neo4j.MoviesDB.model.Movie getMovie() {
-        return Movie;
+    public Movie getMovie() {
+        return movie;
     }
 
-    public void setMovie(com.neo4j.MoviesDB.model.Movie movie) {
-        Movie = movie;
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
-    public Double getAverage_rating() {
+    public Double getBest_average_rating() {
         return best_average_rating;
     }
 
-    public void setAverage_rating(Double best_average_rating) {
+    public void setBest_average_rating(Double best_average_rating) {
         this.best_average_rating = best_average_rating;
     }
 }

@@ -4,6 +4,7 @@
 
 - Neo4j 3.5.18
 - Spring Boot
+- yEd Graph Editor
 
 # Problematic movie ids
 
@@ -13,9 +14,15 @@
     - line: 29574-29575, id: 122662 
     - line: 35673-35674, id: 249260
 
-# DB Snapshot
+# DB Snapshot using yEd
 
 ![DB](./MovieDBDiagram.png "DB")
+
+# Dataset 
+
+- Taken from: https://www.kaggle.com/rounakbanik/the-movies-dataset
+- Parsed using ```./Movies/movie-parser.py```
+- Above parser produces the respective .csv files used for populating the DB
 
 # Populating DB
 

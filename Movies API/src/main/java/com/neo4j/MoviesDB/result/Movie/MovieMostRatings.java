@@ -6,30 +6,30 @@ import org.springframework.data.neo4j.annotation.QueryResult;
 @QueryResult
 public class MovieMostRatings {
 
-    private Movie movie;
-    private Long total_ratings;
+    private Movie top_movie;
+    private Long most_ratings;
 
     public MovieMostRatings() {
     }
 
-    public MovieMostRatings(Movie movie, Long total_ratings) {
-        this.movie = movie;
-        this.total_ratings = total_ratings;
+    public MovieMostRatings(Movie top_movie, Long most_ratings) {
+        this.top_movie = top_movie;
+        this.most_ratings = most_ratings;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public Movie getTop_movie() {
+        return top_movie;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public void setTop_movie(Movie top_movie) {
+        this.top_movie = top_movie;
     }
 
-    public Long getTotal_ratings() {
-        return total_ratings;
+    public Long getMost_ratings() {
+        return most_ratings;
     }
 
-    public void setTotal_ratings(Long total_ratings) {
-        this.total_ratings = total_ratings;
+    public void setMost_ratings(Long most_ratings) {
+        this.most_ratings = most_ratings;
     }
 }

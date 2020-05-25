@@ -134,7 +134,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH collect(m.release_date) AS consecutive_movies, director " +
             "UNWIND range (0, size(consecutive_movies)) AS i " +
             "WITH consecutive_movies[i] AS movie1, consecutive_movies[i+1] AS movie2, director " +
-            "WHERE movie2.year - movie1.year >= $yearInBetween " +
+            "WHERE movie2.year - movie1.year >= $yearsInBetween " +
             "WITH collect({movie1: movie1, movie2:movie2}) AS movies, director " +
             "WHERE size(movies) > 0 " +
             "RETURN director")
@@ -153,7 +153,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH m, COUNT(r) AS total_ratings " +
             "WITH collect({movie: m, total: total_ratings}) AS movies, MAX(total_ratings) AS most_ratings " +
             "UNWIND [movie in movies where movie.total = most_ratings] as m " +
-            "RETURN m AS movie, most_ratings")
+            "RETURN m.movie AS top_movie, most_ratings")
     public List<MovieMostRatings> getMoviesWithMostRatings();
 
 
@@ -170,7 +170,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH m, AVG(r.rating) AS average_ratings " +
             "WITH collect({movie: m, avg: average_ratings}) AS movies, MAX(average_ratings) AS best_average_rating " +
             "UNWIND [movie IN movies WHERE movie.avg = best_average_rating] AS movie " +
-            "RETURN movie, best_average_rating")
+            "RETURN movie.movie AS movie, best_average_rating")
     public List<MovieBestAverageRating> getMoviesWithBestAverageRating();
 
 
@@ -185,7 +185,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH m, AVG(r.rating) AS average_ratings " +
             "WITH collect({movie: m, avg: average_ratings}) AS movies, MIN(average_ratings) AS worst_average_rating " +
             "UNWIND [movie IN movies WHERE movie.avg = worst_average_rating] AS movie " +
-            "RETURN movie, worst_average_rating")
+            "RETURN movie.movie AS movie, worst_average_rating")
     public List<MovieWorstAverageRating> getMoviesWithWorstAverageRating();
 
 
@@ -204,7 +204,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH i AS director, AVG(r.rating) AS average_rating " +
             "WITH collect({director: director, avg: average_rating}) AS directors, MAX(average_rating) AS best_average_rating " +
             "UNWIND [director IN directors WHERE director.avg = best_average_rating] AS director " +
-            "RETURN director, best_average_rating")
+            "RETURN director.director AS director, best_average_rating")
     public List<DirectorBestAverageRating> getDirectorWithBestMovieAverageRating();
 
     // b. WORST
@@ -220,7 +220,7 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
             "WITH i AS director, AVG(r.rating) AS average_rating " +
             "WITH collect({director: director, avg: average_rating}) AS directors, MIN(average_rating) AS worst_average_rating " +
             "UNWIND [director IN directors WHERE director.avg = worst_average_rating] AS director " +
-            "RETURN director, worst_average_rating")
+            "RETURN director.director AS director, worst_average_rating")
     public List<DirectorWorstAverageRating> getDirectorWithWorstMovieAverageRating();
 
 

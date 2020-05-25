@@ -123,7 +123,7 @@
 	WITH m, COUNT(r) AS total_ratings
 	WITH collect({movie: m, total: total_ratings}) AS movies, MAX(total_ratings) AS most_ratings
 	UNWIND [movie in movies where movie.total = most_ratings] as m
-	RETURN m AS movie, most_ratings
+	RETURN m.movie AS top_movie, most_ratings
 
 	MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
 	RETURN m AS movie, COUNT(r) AS total_ratings
