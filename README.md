@@ -1,5 +1,10 @@
 # Neo4j-MovieDB
 
+# Tools Used
+
+- Neo4j 3.5.18
+- Spring Boot
+
 # Problematic movie ids
 
 - some lines had NULL bytes
@@ -7,6 +12,10 @@
     - line: 19765-19766, id: 82663 
     - line: 29574-29575, id: 122662 
     - line: 35673-35674, id: 249260
+
+# DB Snapshot
+
+![DB](./MovieDBDiagram.png "DB")
 
 # Populating DB
 
