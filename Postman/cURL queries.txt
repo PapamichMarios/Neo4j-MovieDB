@@ -1,0 +1,41 @@
+curl --location --request GET 'http://localhost:8080/api/query1?name=Tom%20Hanks'
+
+curl --location --request GET 'http://localhost:8080/api/query2?name=Tom%20Hanks&job=Director'
+curl --location --request GET 'http://localhost:8080/api/query2?name=Tom%20Hanks&job=Producer'
+curl --location --request GET 'http://localhost:8080/api/query2?name=Tom%20Hanks&job=Writer'
+
+curl --location --request GET 'http://localhost:8080/api/query3?name=Tom%20Hanks&dateFrom=1990-10-30&dateTo=2020-10-30'
+
+curl --location --request GET 'http://localhost:8080/api/query4/original?name=Tom%20Hanks'
+curl --location --request GET 'http://localhost:8080/api/query4/spoken?name=Tom%20Hanks'
+
+curl --location --request GET 'http://localhost:8080/api/query5?k=5'
+
+curl --location --request GET 'http://localhost:8080/api/query6/budget?k=5'
+curl --location --request GET 'http://localhost:8080/api/query6/revenue?k=5'
+
+curl --location --request GET 'http://localhost:8080/api/query7?year=2014'
+
+curl --location --request GET 'http://localhost:8080/api/query8?year=2014'
+
+curl --location --request GET 'http://localhost:8080/api/query9?year=2014'
+
+curl --location --request GET 'http://localhost:8080/api/query10?name=Tom%20Hanks'
+
+curl --location --request GET 'http://localhost:8080/api/query11?name=Tom%20Hanks'
+
+curl --location --request GET 'http://localhost:8080/api/query12?k=5&name=Tom%20Hanks'
+
+curl --location --request GET 'http://localhost:8080/api/query13'
+
+curl --location --request GET 'http://localhost:8080/api/query14?yearsInBetween=5'
+
+curl --location --request GET 'http://localhost:8080/api/query15'
+
+curl --location --request GET 'http://localhost:8080/api/query16/best'
+curl --location --request GET 'http://localhost:8080/api/query16/worst'
+
+curl --location --request GET 'http://localhost:8080/api/query17/best'
+curl --location --request GET 'http://localhost:8080/api/query17/worst'
+
+curl --location --request GET 'http://localhost:8080/api/query18'
