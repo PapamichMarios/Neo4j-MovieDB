@@ -5,11 +5,13 @@
 - Neo4j 3.5.18
 - Spring Boot
 - yEd Graph Editor
+- IntelliJ IDEA 2020
+- Visual Studio Code
 
 # Problematic movie ids
 
 - some lines had NULL bytes
-- missing quotes on overview:
+- missing quotes on ```overview``` property:
     - line: 19765-19766, id: 82663 
     - line: 29574-29575, id: 122662 
     - line: 35673-35674, id: 249260
@@ -31,7 +33,6 @@
 
 - Set constraints on label keys
 ```
-// Set constraints on label keys
 CREATE CONSTRAINT ON (m:Movie) ASSERT m.tmdb_id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Company) ASSERT c.id IS UNIQUE;
 CREATE CONSTRAINT ON (c:Country) ASSERT c.code IS UNIQUE;
@@ -186,3 +187,12 @@ LOAD CSV WITH HEADERS FROM 'file:///movie_rating.csv' AS row
 MATCH (movie:Movie {tmdb_id: toInteger(row.tmdb_id)}), (rating:Rating {movie_id: toInteger(row.movie_id)})
 CREATE (movie)-[:HAS_RATING]->(rating);
 ```
+
+# Executing Queries
+
+Three ways:
+- Import collection through Postman. ```./Postman/MoviesDBNeo4j.postman_collection.json``` 
+- Use cURL. ```./Postman/cURL queries.txt```
+- Use Cypher. ```./queries.txt```
+
+# Query Results
