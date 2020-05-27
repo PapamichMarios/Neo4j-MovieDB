@@ -73,47 +73,47 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
     // 7. Find the actors that have co-acted in more than one movies released in a given single year.
     @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[:PLAYED_IN]-(coactor:Individual) " +
             "WHERE m.release_date.year = $year AND ID(actor) < ID(coactor) " +
-            "WITH actor, coactor , COUNT(m) AS movies_together " +
+            "WITH actor, coactor , COUNT(DISTINCT m) AS movies_together " +
             "WHERE movies_together > 1 " +
             "RETURN actor, coactor")
     public List<CoActors> getCoActorsInMoreThanOneMovies(@Param("year") int year);
 
 
     // 8. Find those that have directed and produced a movie in a particular year.
-    @Query ("MATCH (i:Individual)-[producer:WORKED_AT]->(m:Movie)<-[director:WORKED_AT]-(i) " +
-            "WHERE producer.job=\"Producer\" AND director.job=\"Director\" AND m.release_date.year = $year " +
-            "RETURN i")
+    @Query ("MATCH (i:Individual)-[producer:WORKED_AT]->(m1:Movie), (i)-[director:WORKED_AT]->(m2:Movie) " +
+            "WHERE producer.job=\"Producer\" AND director.job=\"Director\" AND m1.release_date.year = $year = m2.release_date.year " +
+            "RETURN DISTINCT i")
     public List<Individual> getProducersAndDirectorsOfMovieInYear(@Param("year") int year);
 
 
     // 9. Find those that have acted, directed and written a movie in a particular year.
-    @Query ("MATCH (i:Individual)-[producer:WORKED_AT]->(m:Movie)<-[director:WORKED_AT]-(i), (i)-[:PLAYED_IN]->(m) " +
-            "WHERE producer.job=\"Producer\" AND director.job=\"Director\" AND m.release_date.year = $year " +
-            "RETURN i")
+    @Query ("MATCH (i:Individual)-[producer:WORKED_AT]->(m1:Movie) " +
+            "MATCH (i)-[director:WORKED_AT]->(m2:Movie) " +
+            "MATCH (i)-[:PLAYED_IN]->(m3:Movie) " +
+            "WHERE producer.job=\"Producer\" AND director.job=\"Director\" AND m1.release_date.year = m2.release_date.year = m3.release_date.year = $year " +
+            "RETURN DISTINCT i")
     public List<Individual> getIndividualWhoActedDirectedWroteAMovieInYear(@Param("year") int year);
 
 
     //10. Find the actors that co-acted with an actor that has acted with a given actor, but have not co-acted with the given actor.
     @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(coactor:Individual) " +
             "MATCH (coactor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor:Individual) " +
-            "WHERE given_actor.name = $name AND NOT (actor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) " +
-            "RETURN actor")
+            "WHERE given_actor.name = $name AND NOT (actor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND actor <> coactor " +
+            "RETURN DISTINCT actor")
     public List<Individual> getActorCoActingWithGivenActorButNotCoActingWithGiven(@Param("name") String name);
 
 
     // 11. Find the directors that a given actor has worked with.
-    @Query("MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[directed:WORKED_AT {job: \"Director\"}]-(director:Individual) " +
-            "WHERE actor.name=$name " +
+    @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[directed:WORKED_AT {job: \"Director\"}]-(director:Individual) " +
+            "WHERE actor.name=$name AND actor <> director " +
             "RETURN DISTINCT director")
     public List<Individual> getDirectorsAnIndividualHasWorkedWith(@Param("name") String name);
 
 
     // 12. Find the top-K directors that a given actor has not worked with, with regard to most cooperations with actors that the given actor has worked with.
-    @Query("MATCH (director:Individual), (given_actor:Individual) " +
-            "WHERE NOT (director)-[:WORKED_AT {job:\"Director\"}]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND given_actor.name=$name " +
-            "WITH director, given_actor " +
-            "MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) " +
+    @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) " +
             "MATCH (director)-[:WORKED_AT {job: \"Director\"}]->(:Movie)<-[:PLAYED_IN]-(actor) " +
+            "WHERE NOT (director)-[:WORKED_AT {job:\"Director\"}]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND given_actor.name=$name " +
             "RETURN director, COUNT(actor) AS cooperations " +
             "ORDER BY cooperations DESC " +
             "LIMIT $k")
@@ -121,8 +121,9 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
 
 
     // 13. Find the pairs of people that have directed each other in at least one movie.
-    @Query ("MATCH (individual1:Individual)-[:PLAYED_IN]->(m:Movie)<-[:WORKED_AT {job:\"Director\"} ]-(individual2:Individual) " +
-            "MATCH (individual2:Individual)-[:WORKED_AT {job:\"Director\"} ]->(m:Movie)<-[:PLAYED_IN]-(individual1:Individual) " +
+    @Query ("MATCH (individual1:Individual)-[:PLAYED_IN]->(m1:Movie)<-[:WORKED_AT {job:\"Director\"} ]-(individual2:Individual) " +
+            "MATCH (individual2:Individual)-[:WORKED_AT {job:\"Director\"} ]->(m2:Movie)<-[:PLAYED_IN]-(individual1:Individual) " +
+            "WHERE ID(individual1) < ID(individual2) " +
             "RETURN individual1, individual2")
     public List<IndividualPair> getIndividualsThatDirectedEachOther();
 
@@ -130,11 +131,11 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
     // 14. Find the directors of consecutively released movies with more than a given amount of years between them.
     @Query ("MATCH (director:Individual)-[:WORKED_AT { job: \"Director\"}]->(m:Movie) " +
             "WITH m, director " +
-            "ORDER BY m.release_date.year ASC " +
+            "ORDER BY m.release_date.year " +
             "WITH collect(m.release_date) AS consecutive_movies, director " +
             "UNWIND range (0, size(consecutive_movies)) AS i " +
             "WITH consecutive_movies[i] AS movie1, consecutive_movies[i+1] AS movie2, director " +
-            "WHERE movie2.year - movie1.year >= $yearsInBetween " +
+            "WHERE duration.between(movie1, movie2).years >= $yearsInBetween " +
             "WITH collect({movie1: movie1, movie2:movie2}) AS movies, director " +
             "WHERE size(movies) > 0 " +
             "RETURN director")

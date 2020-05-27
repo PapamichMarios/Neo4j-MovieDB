@@ -1,10 +1,10 @@
-1. Find the movies (title, tagline, release date) that a particular person was part of their cast.
+--> 1. Find the movies (title, tagline, release date) that a particular person was part of their cast.
 
 	MATCH (i:Individual)-[:PLAYED_IN]->(m:Movie)
 	WHERE i.name = "Tom Hanks"
 	RETURN m.title AS title, m.tagline AS tagline, m.release_date AS release_date;
 
-2. Find the movies (title, tagline, release date) a particular person directed / wrote / produced.
+--> 2. Find the movies (title, tagline, release date) a particular person directed / wrote / produced.
 
 	a. MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
 	WHERE rel.job="Writer" AND i.name="Tom Hanks"
@@ -18,13 +18,13 @@
 	WHERE rel.job="Director" AND i.name="Tom Hanks"
 	RETURN m.title AS title, m.tagline AS tagline, m.release_date AS release_date;
 
-3. What characters has a particular actor embodied between a particular time range of release dates?
+--> 3. What characters has a particular actor embodied between a particular time range of release dates?
 
 	MATCH (i:Individual)-[rel:PLAYED_IN]->(m:Movie)
 	WHERE i.name="Tom Hanks" AND m.release_date>=date("1990-10-30") AND m.release_date<=date("2020-10-30")
 	RETURN rel.character AS character
 
-4. Find the original / spoken languages of movies that a particular person was part of their cast.
+--> 4. Find the original / spoken languages of movies that a particular person was part of their cast.
 
 	a. MATCH (i:Individual)-[:PLAYED_IN]->(m:Movie)
 	WHERE i.name="Tom Hanks"
@@ -34,7 +34,7 @@
 	WHERE i.name="Tom Hanks"
 	RETURN DISTINCT l;
 
-5. Find the top-K directors with regard to largest average movie runtime.
+--> 5. Find the top-K directors with regard to largest average movie runtime.
 
 	MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
 	WHERE rel.job="Director" AND m.runtime IS NOT NULL
@@ -42,95 +42,96 @@
 	ORDER BY average_runtime DESC
 	LIMIT 5
 
-6. Find the top-K producers with regard to largest budget / revenue.
+--> 6. Find the top-K producers with regard to largest budget / revenue.
 
-	MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
+	a. MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
 	RETURN i.name AS producer, m.budget AS budget
 	ORDER BY budget DESC
 	LIMIT 5
 
-		MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
+	b. MATCH (i:Individual)-[rel:WORKED_AT]->(m:Movie)
 	RETURN i.name AS producer, m.revenue AS revenue
 	ORDER BY revenue DESC
 	LIMIT 5
 
-7. Find the actors that have co-acted in more than one movies released in a given single year.
+--> 7. Find the actors that have co-acted in more than one movies released in a given single year.
 
 	MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[:PLAYED_IN]-(coactor:Individual)
 	WHERE m.release_date.year = 2011 AND ID(actor) < ID(coactor)
-	WITH actor, coactor , COUNT(m) AS movies_together
+	WITH actor, coactor , COUNT(DISTINCT m) AS movies_together
 	WHERE movies_together > 1
 	RETURN actor, coactor
 
-8. Find those that have directed and produced a movie in a particular year.
+--> 8. Find those that have directed and produced a movie in a particular year.
 
-	MATCH (i:Individual)-[producer:WORKED_AT]->(m:Movie)<-[director:WORKED_AT]-(i)
-	WHERE producer.job="Producer" AND director.job="Director" AND m.release_date.year = 1958
-	RETURN i
+    MATCH (i:Individual)-[producer:WORKED_AT]->(m1:Movie), (i)-[director:WORKED_AT]->(m2:Movie)
+    WHERE producer.job="Producer" AND director.job="Director" AND m1.release_date.year = 1958 = m2.release_date.year
+    RETURN DISTINCT i
 
-9. Find those that have acted, directed and written a movie in a particular year.
+--> 9. Find those that have acted, directed and written a movie in a particular year.
 
-	MATCH (i:Individual)-[producer:WORKED_AT]->(m:Movie)<-[director:WORKED_AT]-(i), (i)-[:PLAYED_IN]->(m)
-	WHERE producer.job="Producer" AND director.job="Director" AND m.release_date.year = 1954
-	RETURN i
+    MATCH (i:Individual)-[producer:WORKED_AT]->(m1:Movie)
+    MATCH (i)-[director:WORKED_AT]->(m2:Movie)
+    MATCH (i)-[:PLAYED_IN]->(m3:Movie)
+    WHERE producer.job="Producer" AND director.job="Director" AND m1.release_date.year = m2.release_date.year = m3.release_date.year = 1954
+    RETURN DISTINCT i
 
-10. Find the actors that co-acted with an actor that has acted with a given actor, but have not co-acted with the given actor.
+--> 10. Find the actors that co-acted with an actor that has acted with a given actor, but have not co-acted with the given actor.
 
 	MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(coactor:Individual)
 	MATCH (coactor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor:Individual)
-	WHERE given_actor.name = "Tom Hanks" AND NOT (actor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor)
-	RETURN actor
+	WHERE given_actor.name = "Tom Hanks" AND NOT (actor)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND actor <> coactor
+	RETURN DISTINCT actor
 
-11. Find the directors that a given actor has worked with.
+**--> 11. Find the directors that a given actor has worked with.
 
 	MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[directed:WORKED_AT {job: "Director"}]-(director:Individual)
-	WHERE actor.name="Tom Hanks"
+	WHERE actor.name="Tom Hanks" AND actor <> director
 	RETURN DISTINCT director
 
-12. Find the top-K directors that a given actor has not worked with, with regard to most cooperations with actors that the given actor has worked with.
+--> 12. Find the top-K directors that a given actor has not worked with, with regard to most cooperations with actors that the given actor has worked with.
 
-	MATCH (director:Individual), (given_actor:Individual)
-	WHERE NOT (director)-[:WORKED_AT {job:"Director"}]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND given_actor.name="Tom Hanks"
-	WITH director, given_actor
-	MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor) 
-	MATCH (director)-[:WORKED_AT {job: "Director"}]->(:Movie)<-[:PLAYED_IN]-(actor)
-	RETURN director, COUNT(actor) AS cooperations
-	ORDER BY cooperations DESC
-	LIMIT 5
+    MATCH (actor:Individual)-[:PLAYED_IN]->(:Movie)<-[:PLAYED_IN]-(given_actor)
+    MATCH (director)-[:WORKED_AT {job: "Director"}]->(:Movie)<-[:PLAYED_IN]-(actor)
+    WHERE NOT (director)-[:WORKED_AT {job:"Director"}]->(:Movie)<-[:PLAYED_IN]-(given_actor) AND given_actor.name="Tom Hanks"
+    RETURN director, COUNT(actor) AS cooperations
+    ORDER BY cooperations DESC
+    LIMIT 5
 
-13. Find the pairs of people that have directed each other in at least one movie.
+--> 13. Find the pairs of people that have directed each other in at least one movie.
 
-	MATCH (individual1:Individual)-[:PLAYED_IN]->(m:Movie)<-[:WORKED_AT {job:"Director"} ]-(individual2:Individual)
-	MATCH (individual2:Individual)-[:WORKED_AT {job:"Director"} ]->(m:Movie)<-[:PLAYED_IN]-(individual1:Individual)
+	MATCH (individual1:Individual)-[:PLAYED_IN]->(m1:Movie)<-[:WORKED_AT {job:"Director"} ]-(individual2:Individual)
+	MATCH (individual2:Individual)-[:WORKED_AT {job:"Director"} ]->(m2:Movie)<-[:PLAYED_IN]-(individual1:Individual)
+	WHERE ID(individual1) < ID(individual2)
 	RETURN individual1, individual2
 
-14. Find the directors of consecutively released movies with more than a given amount of years between them.
+--> 14. Find the directors of consecutively released movies with more than a given amount of years between them.
 
-	MATCH (director:Individual)-[:WORKED_AT { job: "Director"}]->(m:Movie)
-	WITH m, director
-	ORDER BY m.release_date.year ASC
-	WITH collect(m.release_date) AS consecutive_movies, director
-	UNWIND range (0, size(consecutive_movies)) AS i
-	WITH consecutive_movies[i] AS movie1, consecutive_movies[i+1] AS movie2, director
-	WHERE movie2.year - movie1.year >= 2
-	WITH collect({movie1: movie1, movie2:movie2}) AS movies, director
-	WHERE size(movies) > 0
-	RETURN director
+    MATCH (director:Individual)-[:WORKED_AT { job: "Director"}]->(m:Movie)
+    WITH m, director
+    ORDER BY m.release_date.year
+    WITH collect(m.release_date) AS consecutive_movies, director
+    UNWIND range (0, size(consecutive_movies)) AS i
+    WITH consecutive_movies[i] AS movie1, consecutive_movies[i+1] AS movie2, director
+    WHERE duration.between(movie1, movie2).years >= 2
+    WITH collect({movie1: movie1, movie2:movie2}) AS movies, director
+    WHERE size(movies) > 0
+    RETURN director
 
-15. Find the movie with the most ratings.
+--> 15. Find the movie with the most ratings.
 
-	MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
+	a. MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
 	WITH m, COUNT(r) AS total_ratings
 	WITH collect({movie: m, total: total_ratings}) AS movies, MAX(total_ratings) AS most_ratings
 	UNWIND [movie in movies where movie.total = most_ratings] as m
 	RETURN m.movie AS top_movie, most_ratings
 
-	MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
+	b. MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
 	RETURN m AS movie, COUNT(r) AS total_ratings
 	ORDER BY total_ratings DESC
 	LIMIT 1
 
-16. Find the movie with the best / worst average rating.
+--> 16. Find the movie with the best / worst average rating.
 
 	a. 	MATCH (m:Movie)-[:HAS_RATING]->(r:Rating)
 		RETURN m AS movie, AVG(r.rating) AS average_ratings
@@ -154,7 +155,7 @@
 		UNWIND [movie IN movies WHERE movie.avg = worst_average_rating] AS movie
 		RETURN movie, worst_average_rating
 
-17. Find the director with the best / worst average rating.
+--> 17. Find the director with the best / worst average rating.
 
 	a. 	MATCH (i:Individual)-[work:WORKED_AT]->(m:Movie)-[:HAS_RATING]->(r:Rating)
 		WHERE work.job="Director"
@@ -182,7 +183,7 @@
 		UNWIND [director IN directors WHERE director.avg = worst_average_rating] AS director
 		RETURN director, worst_average_rating
 
-18. Find the pair of actors that co-acted in movies with regard to the largest count of user ratings.
+--> 18. Find the pair of actors that co-acted in movies with regard to the largest count of user ratings.
 
 	MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[:PLAYED_IN]-(coactor:Individual), (m)-[:HAS_RATING]->(r:Rating)
 	WHERE ID(actor) < ID(coactor)
