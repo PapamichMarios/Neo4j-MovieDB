@@ -1,0 +1,1482 @@
+--> Query 17 - Best: curl --location --request GET 'http://localhost:8080/api/query17/best'
+
+[
+    {
+        "director": {
+            "id": 128107,
+            "gender": 2,
+            "name": "Gianni Amelio"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 994323,
+            "gender": 0,
+            "name": "Kayo Hatta"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1212571,
+            "gender": 0,
+            "name": "Jerry Ciccoritti"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 146295,
+            "gender": 0,
+            "name": "Yim Ho"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 135163,
+            "gender": 1,
+            "name": "Susan Streitfeld"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 118441,
+            "gender": 0,
+            "name": "Murray Lerner"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 71871,
+            "gender": 2,
+            "name": "Sergei Bodrov Jr."
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 58922,
+            "gender": 2,
+            "name": "Craig Rosenberg"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 4724,
+            "gender": 2,
+            "name": "Kevin Bacon"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 8403,
+            "gender": 2,
+            "name": "David Hare"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 105287,
+            "gender": 0,
+            "name": "Scott Harris"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 72182,
+            "gender": 0,
+            "name": "Mark Pavia"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 62872,
+            "gender": 1,
+            "name": "Katja von Garnier"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 234358,
+            "gender": 0,
+            "name": "Leslie Woodhead"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 222443,
+            "gender": 0,
+            "name": "Bud Greenspan"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 100793,
+            "gender": 0,
+            "name": "Reginald Le Borg"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 29755,
+            "gender": 0,
+            "name": "Erle C. Kenton"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 30146,
+            "gender": 2,
+            "name": "Rowland V. Lee"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 26724,
+            "gender": 2,
+            "name": "Eric Tsang"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 113102,
+            "gender": 2,
+            "name": "Tom Moore"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 3349,
+            "gender": 2,
+            "name": "James B. Harris"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 30956,
+            "gender": 2,
+            "name": "Jesús Franco"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1038646,
+            "gender": 0,
+            "name": "Gréta Olafsdóttir"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1038645,
+            "gender": 0,
+            "name": "Susan Muska"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 42060,
+            "gender": 2,
+            "name": "Sidney Franklin"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 108670,
+            "gender": 2,
+            "name": "John Keitel"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 19842,
+            "gender": 2,
+            "name": "José Luis Cuerda"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 120685,
+            "gender": 0,
+            "name": "Lionel Coleman"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 144277,
+            "gender": 1,
+            "name": "Fina Torres"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 83718,
+            "gender": 0,
+            "name": "Neil Turitz"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 137932,
+            "gender": 2,
+            "name": "Ben Bolt"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 24281,
+            "gender": 0,
+            "name": "Vittorio Taviani"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 24279,
+            "gender": 2,
+            "name": "Paolo Taviani"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 560320,
+            "gender": 0,
+            "name": "William Phelps"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 56789,
+            "gender": 2,
+            "name": "Thomas Bezucha"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 93923,
+            "gender": 2,
+            "name": "Cedric Sundstrom"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 67569,
+            "gender": 0,
+            "name": "Steven M. Martin"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 939275,
+            "gender": 0,
+            "name": "Paul Cox"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 226552,
+            "gender": 2,
+            "name": "Blair Treu"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 9309,
+            "gender": 2,
+            "name": "Richard Pryor"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 43980,
+            "gender": 2,
+            "name": "Robert Houston"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 549357,
+            "gender": 2,
+            "name": "Phil Monroe"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 549358,
+            "gender": 2,
+            "name": "Gerry Chiniquy"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 930633,
+            "gender": 2,
+            "name": "Friz Freleng"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 61905,
+            "gender": 2,
+            "name": "Steven Vidler"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 196769,
+            "gender": 2,
+            "name": "Jonathan Wacks"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 71307,
+            "gender": 0,
+            "name": "Laetitia Colombani"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 146811,
+            "gender": 0,
+            "name": "Miles Swain"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 585280,
+            "gender": 0,
+            "name": "Kristen Coury"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1061573,
+            "gender": 0,
+            "name": "Dana Brown"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 6980,
+            "gender": 2,
+            "name": "Émile Gaudreault"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 69737,
+            "gender": 2,
+            "name": "C. Jay Cox"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1081559,
+            "gender": 0,
+            "name": "Marc Singer"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 123558,
+            "gender": 0,
+            "name": "Jean-François Pouliot"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 19328,
+            "gender": 2,
+            "name": "Dick Powell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 55379,
+            "gender": 0,
+            "name": "Yann Samuell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 116186,
+            "gender": 0,
+            "name": "Lowell Sherman"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 253716,
+            "gender": 2,
+            "name": "Thorold Dickinson"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1057662,
+            "gender": 0,
+            "name": "Todd McCarthy"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1057663,
+            "gender": 0,
+            "name": "Stuart Samuels"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 71466,
+            "gender": 2,
+            "name": "Arnold Glassman"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 42002,
+            "gender": 2,
+            "name": "Yurek Bogayevicz"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 190339,
+            "gender": 0,
+            "name": "Ian Iqbal Rashid"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 213337,
+            "gender": 0,
+            "name": "Ondřej Trojan"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 125544,
+            "gender": 0,
+            "name": "Tim Fywell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1843,
+            "gender": 2,
+            "name": "Thomas Jahn"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 871110,
+            "gender": 0,
+            "name": "Tetsuro Takeuchi"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 14292,
+            "gender": 2,
+            "name": "Sidney Gilliat"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 440124,
+            "gender": 2,
+            "name": "Drew Heriot"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 150975,
+            "gender": 2,
+            "name": "Hong Sang-soo"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 109176,
+            "gender": 0,
+            "name": "Tennyson Bardwell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 933161,
+            "gender": 0,
+            "name": "Luiz Fernando Carvalho"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 29720,
+            "gender": 2,
+            "name": "Abel Gance"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 27745,
+            "gender": 2,
+            "name": "Robert C. Cooper"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 81963,
+            "gender": 2,
+            "name": "Jonah Markowitz"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 223806,
+            "gender": 1,
+            "name": "Xan Cassavetes"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1214381,
+            "gender": 0,
+            "name": "Martin Wood"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 66563,
+            "gender": 2,
+            "name": "Fred Wolf"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 933065,
+            "gender": 0,
+            "name": "Jim VanBebber"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 27875,
+            "gender": 2,
+            "name": "Alex van Warmerdam"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 51470,
+            "gender": 0,
+            "name": "Nic Balthazar"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 94261,
+            "gender": 2,
+            "name": "Russell P. Marleau"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 113876,
+            "gender": 0,
+            "name": "Mark Hartley"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1242904,
+            "gender": 0,
+            "name": "Vincent J. Donehue"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 96423,
+            "gender": 0,
+            "name": "Aleksandr Seryj"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 81916,
+            "gender": 2,
+            "name": "Tommy Wiseau"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 147095,
+            "gender": 2,
+            "name": "Bill Bryden"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 550045,
+            "gender": 2,
+            "name": "Jeff Zimbalist"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 550046,
+            "gender": 0,
+            "name": "Michael Zimbalist"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 106518,
+            "gender": 0,
+            "name": "Martin Curland"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 143998,
+            "gender": 2,
+            "name": "Malcolm St. Clair"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 119368,
+            "gender": 1,
+            "name": "Jennifer Westfeldt"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1247708,
+            "gender": 0,
+            "name": "Tatsuya Ishihara"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 219647,
+            "gender": 0,
+            "name": "Yasuhiro Takemoto"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 60962,
+            "gender": 2,
+            "name": "Mike Clattenburg"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 224687,
+            "gender": 2,
+            "name": "Daniel Lindsay"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 110265,
+            "gender": 0,
+            "name": "T.J. Martin"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 59362,
+            "gender": 0,
+            "name": "Andrew Jimenez"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 110828,
+            "gender": 0,
+            "name": "Christopher Kenneally"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 28671,
+            "gender": 0,
+            "name": "Atiq Rahimi"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 550819,
+            "gender": 0,
+            "name": "Yasunori Ide"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1016214,
+            "gender": 0,
+            "name": "Kleber Mendonça Filho"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 109314,
+            "gender": 2,
+            "name": "Don Hertzfeldt"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 108258,
+            "gender": 0,
+            "name": "Chris Bould"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1190421,
+            "gender": 2,
+            "name": "Leonid Gayday"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1208675,
+            "gender": 0,
+            "name": "Greg Osborne"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 560352,
+            "gender": 0,
+            "name": "Munehisa Sakai"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 109978,
+            "gender": 2,
+            "name": "Ian Fitzgibbon"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 144798,
+            "gender": 0,
+            "name": "Simon Cellan Jones"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 113600,
+            "gender": 0,
+            "name": "Susanna White"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 71353,
+            "gender": 0,
+            "name": "Fernando E. Solanas"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 74730,
+            "gender": 2,
+            "name": "Felix Herngren"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 44797,
+            "gender": 0,
+            "name": "Tim Van Patten"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 166291,
+            "gender": 2,
+            "name": "Tony To"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 21206,
+            "gender": 2,
+            "name": "Graham Yost"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 41272,
+            "gender": 2,
+            "name": "Don Mischer"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 74881,
+            "gender": 0,
+            "name": "Rocco Urbisci"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 85716,
+            "gender": 0,
+            "name": "Robert C. Ramirez"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 221734,
+            "gender": 2,
+            "name": "John-Paul Davidson"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 7709,
+            "gender": 0,
+            "name": "Romain Goupil"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 140617,
+            "gender": 2,
+            "name": "Ezra Edelman"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 97322,
+            "gender": 2,
+            "name": "Richard Bell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 223393,
+            "gender": 0,
+            "name": "Max Mitchell"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 85013,
+            "gender": 0,
+            "name": "Stéphane Giusti"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 111212,
+            "gender": 0,
+            "name": "Michael O. Gallant"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 118463,
+            "gender": 2,
+            "name": "Peter DeLuise"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 7465,
+            "gender": 1,
+            "name": "Carrie Preston"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 109465,
+            "gender": 0,
+            "name": "Marc Moody"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 115143,
+            "gender": 2,
+            "name": "Fred M. Caruso"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 94264,
+            "gender": 2,
+            "name": "Casper Andreas"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1286322,
+            "gender": 0,
+            "name": "Michael Criscione"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1286323,
+            "gender": 2,
+            "name": "Michael Meyer"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 116792,
+            "gender": 2,
+            "name": "Everett Lewis"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1366270,
+            "gender": 0,
+            "name": "Wade Gasque"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1141827,
+            "gender": 0,
+            "name": "Sabine Bernardi"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1018106,
+            "gender": 2,
+            "name": "S. Craig Zahler"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1096867,
+            "gender": 1,
+            "name": "Thea Sharrock"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 8027,
+            "gender": 0,
+            "name": "Ricardo Curtis"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 92936,
+            "gender": 0,
+            "name": "Jonathan Hock"
+        },
+        "best_average_rating": 5.0
+    },
+    {
+        "director": {
+            "id": 1603696,
+            "gender": 0,
+            "name": "Tinu Suresh Desai"
+        },
+        "best_average_rating": 5.0
+    }
+]
+
+
+--> Query 17 - Worst
+
+[
+    {
+        "director": {
+            "id": 554095,
+            "gender": 0,
+            "name": "Chi Muoi Lo"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 114562,
+            "gender": 2,
+            "name": "Ray Kellogg"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 157301,
+            "gender": 2,
+            "name": "Will Mackenzie"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 22814,
+            "gender": 2,
+            "name": "Richard Wenk"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 114518,
+            "gender": 2,
+            "name": "Bill Rebane"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 38585,
+            "gender": 2,
+            "name": "Marino Girolami"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 73051,
+            "gender": 2,
+            "name": "Jim Malone"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 39608,
+            "gender": 0,
+            "name": "John Derek"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 8429,
+            "gender": 2,
+            "name": "Clark L. Paylow"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 117350,
+            "gender": 0,
+            "name": "Dale Resteghini"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 41704,
+            "gender": 2,
+            "name": "Jack Pollexfen"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 67941,
+            "gender": 0,
+            "name": "Hatsuki Tsuji"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 29123,
+            "gender": 0,
+            "name": "Paul Wegener"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 29168,
+            "gender": 2,
+            "name": "Carl Boese"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 82413,
+            "gender": 2,
+            "name": "Jack Conway"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 97205,
+            "gender": 2,
+            "name": "Kon Ichikawa"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 88571,
+            "gender": 0,
+            "name": "Harold P. Warren"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 33036,
+            "gender": 2,
+            "name": "Roland Suso Richter"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 6284,
+            "gender": 0,
+            "name": "Kay Pollak"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 24757,
+            "gender": 0,
+            "name": "Sylvio Tabet"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 22151,
+            "gender": 2,
+            "name": "Malcolm Mowbray"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 90864,
+            "gender": 2,
+            "name": "Charles Grosvenor"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 87191,
+            "gender": 0,
+            "name": "Billy Kent"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 58603,
+            "gender": 2,
+            "name": "Joel Bender"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 2223,
+            "gender": 2,
+            "name": "Fred Savage"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 67657,
+            "gender": 2,
+            "name": "Scott Glosserman"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 64331,
+            "gender": 2,
+            "name": "Shim Hyung-Rae"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 84113,
+            "gender": 2,
+            "name": "Charles Robert Carner"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1028796,
+            "gender": 0,
+            "name": "Richard Berge"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1260119,
+            "gender": 0,
+            "name": "Bonni Cohen"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 65569,
+            "gender": 0,
+            "name": "Emmanuel Mouret"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 59229,
+            "gender": 2,
+            "name": "Damien Dante Wayans"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 131122,
+            "gender": 0,
+            "name": "Isidro Ortiz"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 34799,
+            "gender": 0,
+            "name": "Harry L. Fraser"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 45577,
+            "gender": 2,
+            "name": "Claudio Fragasso"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 71506,
+            "gender": 0,
+            "name": "Rémi Bezançon"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 134656,
+            "gender": 0,
+            "name": "Suzie Templeton"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 225952,
+            "gender": 2,
+            "name": "Vikram Jayanti"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1023127,
+            "gender": 0,
+            "name": "Lee Kirk"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1707,
+            "gender": 0,
+            "name": "Stuart Beattie"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 40905,
+            "gender": 2,
+            "name": "Niki List"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1896,
+            "gender": 2,
+            "name": "Don Cheadle"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1611981,
+            "gender": 2,
+            "name": "Mark Elijah Rosenberg"
+        },
+        "worst_average_rating": 0.5
+    },
+    {
+        "director": {
+            "id": 1293762,
+            "gender": 0,
+            "name": "Oscar Sharp"
+        },
+        "worst_average_rating": 0.5
+    }
+]

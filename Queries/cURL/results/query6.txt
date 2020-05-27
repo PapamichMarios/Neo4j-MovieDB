@@ -1,0 +1,50 @@
+--> Query 6 - Budget: curl --location --request GET 'http://localhost:8080/api/query6/budget?k=5'
+
+[
+    {
+        "producer": "John Myhre",
+        "budget": 3.8E8
+    },
+    {
+        "producer": "David C. Hughes",
+        "budget": 3.8E8
+    },
+    {
+        "producer": "Elizabeth McClurg",
+        "budget": 3.8E8
+    },
+    {
+        "producer": "Gordon Sim",
+        "budget": 3.8E8
+    },
+    {
+        "producer": "Hans Zimmer",
+        "budget": 3.8E8
+    }
+]
+
+
+--> Query 6 - Budget: curl --location --request GET 'http://localhost:8080/api/query6/revenue?k=5'
+
+[
+    {
+        "producer": "Adrian Fernandes",
+        "revenue": 2.787965087E9
+    },
+    {
+        "producer": "Taisuke Tanimura",
+        "revenue": 2.787965087E9
+    },
+    {
+        "producer": "Matthias Menz",
+        "revenue": 2.787965087E9
+    },
+    {
+        "producer": "Christopher Scarabosio",
+        "revenue": 2.787965087E9
+    },
+    {
+        "producer": "James Horner",
+        "revenue": 2.787965087E9
+    }
+]

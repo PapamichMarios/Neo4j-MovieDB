@@ -1,0 +1,44 @@
+--> Query 12: curl --location --request GET 'http://localhost:8080/api/query12?k=5&name=Tom%20Hanks'
+
+[
+    {
+        "director": {
+            "id": 1243,
+            "gender": 2,
+            "name": "Woody Allen"
+        },
+        "cooperations": 188
+    },
+    {
+        "director": {
+            "id": 12890,
+            "gender": 2,
+            "name": "Pete Docter"
+        },
+        "cooperations": 114
+    },
+    {
+        "director": {
+            "id": 4610,
+            "gender": 2,
+            "name": "John Landis"
+        },
+        "cooperations": 92
+    },
+    {
+        "director": {
+            "id": 1032,
+            "gender": 2,
+            "name": "Martin Scorsese"
+        },
+        "cooperations": 91
+    },
+    {
+        "director": {
+            "id": 3026,
+            "gender": 2,
+            "name": "Rob Reiner"
+        },
+        "cooperations": 86
+    }
+]

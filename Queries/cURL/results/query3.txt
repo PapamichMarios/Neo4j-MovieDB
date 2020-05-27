@@ -1,0 +1,31 @@
+--> Query 3: curl --location --request GET 'http://localhost:8080/api/query3?name=Alfred%20Hitchcock&dateFrom=1950-10-30&dateTo=1960-10-30'
+
+[
+    {
+        "character": "Clock-Winder in Songwriter's Apartment (uncredited)"
+    },
+    {
+        "character": "Man Who Misses Bus (uncredited)"
+    },
+    {
+        "character": "Man Sitting Next to John Robie on Bus (uncredited)"
+    },
+    {
+        "character": "Man at Tony's Table at the Dinner in Photograph (uncredited)"
+    },
+    {
+        "character": "Man outside Office"
+    },
+    {
+        "character": "Man in Morocco Marketplace (uncredited)"
+    },
+    {
+        "character": "Man Walking Past Sam's Outdoor Exhibition"
+    },
+    {
+        "character": "Man Crossing the Top of Long Staircase (uncredited)"
+    },
+    {
+        "character": "Man Boarding Train (uncredited)"
+    }
+]

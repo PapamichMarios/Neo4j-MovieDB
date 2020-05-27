@@ -1,0 +1,44 @@
+--> Query 8: curl --location --request GET 'http://localhost:8080/api/query8?year=1923'
+
+[
+    {
+        "id": 8636,
+        "gender": 2,
+        "name": "Cecil B. DeMille"
+    },
+    {
+        "id": 2106,
+        "gender": 2,
+        "name": "Walt Disney"
+    },
+    {
+        "id": 130706,
+        "gender": 0,
+        "name": "Alla Nazimova"
+    },
+    {
+        "id": 8635,
+        "gender": 2,
+        "name": "Buster Keaton"
+    },
+    {
+        "id": 565483,
+        "gender": 0,
+        "name": "Rupert Hughes"
+    },
+    {
+        "id": 13848,
+        "gender": 2,
+        "name": "Charlie Chaplin"
+    },
+    {
+        "id": 37362,
+        "gender": 2,
+        "name": "Henry King"
+    },
+    {
+        "id": 71786,
+        "gender": 2,
+        "name": "Rex Ingram"
+    }
+]

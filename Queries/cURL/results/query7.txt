@@ -1,0 +1,52 @@
+--> Query 7: curl --location --request GET 'http://localhost:8080/api/query7?year=1923'
+
+[
+    {
+        "actor": {
+            "id": 8635,
+            "gender": 2,
+            "name": "Buster Keaton"
+        },
+        "coactor": {
+            "id": 10525,
+            "gender": 2,
+            "name": "Joe Roberts"
+        }
+    },
+    {
+        "actor": {
+            "id": 13848,
+            "gender": 2,
+            "name": "Charlie Chaplin"
+        },
+        "coactor": {
+            "id": 21301,
+            "gender": 1,
+            "name": "Edna Purviance"
+        }
+    },
+    {
+        "actor": {
+            "id": 88953,
+            "gender": 2,
+            "name": "Harold Lloyd"
+        },
+        "coactor": {
+            "id": 148387,
+            "gender": 0,
+            "name": "Wallace Howe"
+        }
+    },
+    {
+        "actor": {
+            "id": 88671,
+            "gender": 2,
+            "name": "Richard Dix"
+        },
+        "coactor": {
+            "id": 130493,
+            "gender": 2,
+            "name": "Robert Edeson"
+        }
+    }
+]

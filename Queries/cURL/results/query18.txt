@@ -1,0 +1,21 @@
+--> Query 18: curl --location --request GET 'http://localhost:8080/api/query18'
+
+No results due to the query being very heavy. I left it for one hour and still no result. I constructed an alternative comparing only two movies.
+
+--> Query18 Alternative: curl --location --request GET 'http://localhost:8080/api/query18/alternative'
+
+[
+    {
+        "actor": {
+            "id": 4070,
+            "gender": 1,
+            "name": "Grace Kelly"
+        },
+        "coactor": {
+            "id": 87518,
+            "gender": 2,
+            "name": "Robin Hughes"
+        },
+        "total_ratings": 26
+    }
+]

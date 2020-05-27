@@ -1,0 +1,19 @@
+--> Query 9: curl --location --request GET 'http://localhost:8080/api/query9?year=1956'
+
+[
+    {
+        "id": 6593,
+        "gender": 2,
+        "name": "John Huston"
+    },
+    {
+        "id": 2636,
+        "gender": 2,
+        "name": "Alfred Hitchcock"
+    },
+    {
+        "id": 87390,
+        "gender": 0,
+        "name": "Mark Stevens"
+    }
+]

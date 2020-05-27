@@ -1,0 +1,121 @@
+--> Query 2 - Director: curl --location --request GET 'http://localhost:8080/api/query2?name=Tom%20Hanks&job=Director'
+
+[
+    {
+        "title": "Band of Brothers",
+        "tagline": "Ordinary men. Extraordinary times.",
+        "release_date": "2001-09-09"
+    },
+    {
+        "title": "Larry Crowne",
+        "tagline": "Rediscover life and love",
+        "release_date": "2011-06-30"
+    },
+    {
+        "title": "That Thing You Do!",
+        "tagline": "In every life there comes a time when that dream you dream becomes that thing you do.",
+        "release_date": "1996-10-04"
+    }
+]
+
+
+--> Query 2 - Producer: curl --location --request GET 'http://localhost:8080/api/query2?name=Tom%20Hanks&job=Producer'
+
+[
+    {
+        "title": "The Sixties",
+        "tagline": "The Decade That Changed The World",
+        "release_date": "2013-06-14"
+    },
+    {
+        "title": "My Big Fat Greek Wedding 2",
+        "tagline": "People change. Greeks don't.",
+        "release_date": "2016-03-23"
+    },
+    {
+        "title": "The Circle",
+        "tagline": "Knowing is good. Knowing everything is better.",
+        "release_date": "2017-04-27"
+    },
+    {
+        "title": "Parkland",
+        "tagline": "November 22, 1963, 12:38 pm - A trauma patient is rushed to Parkland Memorial Hospital in Dallas. His name is President John F. Kennedy.",
+        "release_date": "2013-10-02"
+    },
+    {
+        "title": "Larry Crowne",
+        "tagline": "Rediscover life and love",
+        "release_date": "2011-06-30"
+    },
+    {
+        "title": "We Stand Alone Together",
+        "tagline": null,
+        "release_date": "2001-11-10"
+    },
+    {
+        "title": "Where the Wild Things Are",
+        "tagline": "There's one in all of us.",
+        "release_date": "2009-10-16"
+    },
+    {
+        "title": "The Great Buck Howard",
+        "tagline": "Greatness is a state of mind.",
+        "release_date": "2008-01-18"
+    },
+    {
+        "title": "City of Ember",
+        "tagline": "Escape is the only option",
+        "release_date": "2008-10-07"
+    },
+    {
+        "title": "Charlie Wilson's War",
+        "tagline": "Based on a true story. You think we could make all this up?",
+        "release_date": "2007-12-19"
+    },
+    {
+        "title": "The Ant Bully",
+        "tagline": "The battle for the lawn is on.",
+        "release_date": "2006-07-27"
+    },
+    {
+        "title": "Neil Young: Heart of Gold",
+        "tagline": null,
+        "release_date": "2006-02-10"
+    },
+    {
+        "title": "My Big Fat Greek Wedding",
+        "tagline": "Love is here to stay... so is her family.",
+        "release_date": "2002-02-22"
+    },
+    {
+        "title": "Cast Away",
+        "tagline": "At the edge of the world, his journey begins.",
+        "release_date": "2000-12-22"
+    }
+]
+
+
+--> Query 2 - Writer: curl --location --request GET 'http://localhost:8080/api/query2?name=Alfred%20Hitchcock&job=Writer'
+
+[
+    {
+        "title": "The Ring",
+        "tagline": "Two boxers compete for the love of a woman.",
+        "release_date": "1927-10-01"
+    },
+    {
+        "title": "Champagne",
+        "tagline": null,
+        "release_date": "1928-08-19"
+    },
+    {
+        "title": "The Skin Game",
+        "tagline": null,
+        "release_date": "1931-02-26"
+    },
+    {
+        "title": "Juno and the Paycock",
+        "tagline": null,
+        "release_date": "1930-06-29"
+    }
+]

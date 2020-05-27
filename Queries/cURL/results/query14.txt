@@ -1,0 +1,49 @@
+--> Query 14: curl --location --request GET 'http://localhost:8080/api/query14?yearsInBetween=40'
+
+[
+    {
+        "id": 1008306,
+        "gender": 0,
+        "name": "Lewin Fitzhamon"
+    },
+    {
+        "id": 1496,
+        "gender": 2,
+        "name": "Tod Browning"
+    },
+    {
+        "id": 81749,
+        "gender": 0,
+        "name": "Manoel de Oliveira"
+    },
+    {
+        "id": 10139,
+        "gender": 1,
+        "name": "Leni Riefenstahl"
+    },
+    {
+        "id": 74565,
+        "gender": 2,
+        "name": "Jack Kinney"
+    },
+    {
+        "id": 115754,
+        "gender": 2,
+        "name": "Les Clark"
+    },
+    {
+        "id": 90204,
+        "gender": 0,
+        "name": "José Mojica Marins"
+    },
+    {
+        "id": 224419,
+        "gender": 0,
+        "name": "Stefan Jarl"
+    },
+    {
+        "id": 1066813,
+        "gender": 0,
+        "name": "Frank Simon"
+    }
+]

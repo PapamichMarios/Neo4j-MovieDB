@@ -1,0 +1,67 @@
+--> Query 4 - Original Language: curl --location --request GET 'http://localhost:8080/api/query4/original?name=Alfred%20Hitchcock'
+
+[
+    {
+        "original_language": "en"
+    }
+]
+
+
+--> Query 4 - Language (node): curl --location --request GET 'http://localhost:8080/api/query4/spoken?name=Alfred%20Hitchcock'
+
+[
+    {
+        "id": 424416,
+        "code": "ja",
+        "name": "日本語",
+        "movies": []
+    },
+    {
+        "id": 424411,
+        "code": "it",
+        "name": "Italiano",
+        "movies": []
+    },
+    {
+        "id": 424402,
+        "code": "es",
+        "name": "Español",
+        "movies": []
+    },
+    {
+        "id": 424406,
+        "code": "nl",
+        "name": "Nederlands",
+        "movies": []
+    },
+    {
+        "id": 424400,
+        "code": "en",
+        "name": "English",
+        "movies": []
+    },
+    {
+        "id": 424448,
+        "code": "lv",
+        "name": "Latviešu",
+        "movies": []
+    },
+    {
+        "id": 424403,
+        "code": "de",
+        "name": "Deutsch",
+        "movies": []
+    },
+    {
+        "id": 424417,
+        "code": "ar",
+        "name": "العربية",
+        "movies": []
+    },
+    {
+        "id": 424401,
+        "code": "fr",
+        "name": "Français",
+        "movies": []
+    }
+]

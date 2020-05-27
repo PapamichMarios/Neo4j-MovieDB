@@ -191,8 +191,18 @@ CREATE (movie)-[:HAS_RATING]->(rating);
 # Executing Queries
 
 Three ways:
-- Import collection through Postman. ```./Postman/MoviesDBNeo4j.postman_collection.json``` 
-- Use cURL. ```./Postman/cURL queries.txt```
-- Use Cypher. ```./queries.txt```
+- Import collection through Postman. ```./Queries/postman/MoviesDBNeo4j.postman_collection.json``` 
+- Use cURL. ```./Queries/cURL/cURL queries.txt```
+- Use Cypher. ```./Queries/cypher queries.txt```
 
 # Query Results
+
+- ```./Queries/cURL/results```
+- For the best/worst queries **(queries 16, 17)**, I return all the best/worst results not only one.
+- Because query 18 is very computation heavy, I constructed an alternative which only compares two movies:
+  - Dial M for Murder
+  - Psycho
+
+# Sample Images
+
+- ```./Queries/images```

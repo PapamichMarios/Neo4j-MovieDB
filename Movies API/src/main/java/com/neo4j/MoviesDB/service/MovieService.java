@@ -141,4 +141,9 @@ public class MovieService {
     public List<CoActorsTotalRatings> getCoActorsBasedOnTotalRatings() {
         return this.movieRepository.getCoActorsBasedOnTotalRatings();
     }
+
+    // Query 18 Alternative
+    public List<CoActorsTotalRatings> getCoActorsBasedOnTotalRatingsAlternative() {
+        return this.movieRepository.getCoActorsBasedOnTotalRatingsAlternative();
+    }
 }

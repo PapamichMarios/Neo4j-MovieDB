@@ -1,0 +1,124 @@
+--> Query 1 : curl --location --request GET 'http://localhost:8080/api/query1?name=Alfred%20Hitchcock'
+
+[
+    {
+        "title": "Rear Window",
+        "tagline": "It only takes one witness to spoil the perfect crime.",
+        "release_date": "1954-08-01"
+    },
+    {
+        "title": "North by Northwest",
+        "tagline": "It's a deadly game of 'tag' and Cary Grant is 'it'...",
+        "release_date": "1959-07-07"
+    },
+    {
+        "title": "Rebecca",
+        "tagline": "The shadow of this woman darkened their love.",
+        "release_date": "1940-04-12"
+    },
+    {
+        "title": "To Catch a Thief",
+        "tagline": "WANTED by the police in all the luxury-spots of Europe!... A catch for any woman!",
+        "release_date": "1955-08-03"
+    },
+    {
+        "title": "Foreign Correspondent",
+        "tagline": "The thrill spectacle of the year!",
+        "release_date": "1940-08-16"
+    },
+    {
+        "title": "Notorious",
+        "tagline": "Notorious woman of affairs... Adventurous man of the world",
+        "release_date": "1946-08-15"
+    },
+    {
+        "title": "The 39 Steps",
+        "tagline": "Handcuffed to the girl who double-crossed him",
+        "release_date": "1935-06-01"
+    },
+    {
+        "title": "Dial M for Murder",
+        "tagline": "If a woman answers...hang on for dear life!",
+        "release_date": "1954-05-29"
+    },
+    {
+        "title": "Psycho",
+        "tagline": "The master of suspense moves his cameras into the icy blackness of the unexplored!",
+        "release_date": "1960-06-16"
+    },
+    {
+        "title": "Strangers on a Train",
+        "tagline": "It starts with a shriek of a train whistle...and ends with shrieking excitement.",
+        "release_date": "1951-06-18"
+    },
+    {
+        "title": "I Confess",
+        "tagline": "Crushed lips don’t talk.",
+        "release_date": "1953-02-28"
+    },
+    {
+        "title": "Under Capricorn",
+        "tagline": "Mystery, murder and passion from the master of suspense!",
+        "release_date": "1949-09-08"
+    },
+    {
+        "title": "Family Plot",
+        "tagline": "There’s no body in the family plot.",
+        "release_date": "1976-04-09"
+    },
+    {
+        "title": "The Trouble with Harry",
+        "tagline": "A THRILLER with a difference!",
+        "release_date": "1955-10-03"
+    },
+    {
+        "title": "Marnie",
+        "tagline": "Thief... Liar... Cheat... she was all of these and he knew it!",
+        "release_date": "1964-07-09"
+    },
+    {
+        "title": "Lifeboat",
+        "tagline": "Six men and three women - against the sea, and each other!",
+        "release_date": "1944-01-11"
+    },
+    {
+        "title": "Shadow of a Doubt",
+        "tagline": "A Blast of DRAMATIC Dynamite exploded right before your eyes!",
+        "release_date": "1943-01-16"
+    },
+    {
+        "title": "The Man Who Knew Too Much",
+        "tagline": "A little knowledge can be a deadly thing!",
+        "release_date": "1956-06-01"
+    },
+    {
+        "title": "Easy Virtue",
+        "tagline": null,
+        "release_date": "1928-03-05"
+    },
+    {
+        "title": "Blackmail",
+        "tagline": "See and Hear It - Our Mother Tongue As It Should Be Spoken",
+        "release_date": "1929-06-30"
+    },
+    {
+        "title": "The Lodger: A Story of the London Fog",
+        "tagline": null,
+        "release_date": "1927-02-14"
+    },
+    {
+        "title": "Murder!",
+        "tagline": null,
+        "release_date": "1930-07-31"
+    },
+    {
+        "title": "Night Will Fall",
+        "tagline": null,
+        "release_date": "2014-06-07"
+    },
+    {
+        "title": "Hitchcock/Truffaut",
+        "tagline": null,
+        "release_date": "2015-09-04"
+    }
+]

@@ -1,0 +1,24 @@
+--> Query 5: curl --location --request GET 'http://localhost:8080/api/query5?k=5'
+
+[
+    {
+        "director": "Paul Krasny",
+        "average_runtime": 1256.0
+    },
+    {
+        "director": "Harry Falk",
+        "average_runtime": 1256.0
+    },
+    {
+        "director": "Sergei Ursuliak",
+        "average_runtime": 644.0
+    },
+    {
+        "director": "Tony To",
+        "average_runtime": 622.5
+    },
+    {
+        "director": "Lynn Novick",
+        "average_runtime": 602.0
+    }
+]

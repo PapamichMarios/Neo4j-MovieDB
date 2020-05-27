@@ -229,6 +229,15 @@ public interface MovieRepository extends Neo4jRepository<Movie, Long> {
     @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[:PLAYED_IN]-(coactor:Individual), (m)-[:HAS_RATING]->(r:Rating) " +
             "WHERE ID(actor) < ID(coactor) " +
             "RETURN actor, coactor, COUNT(r.rating) AS total_ratings " +
-            "ORDER BY total_ratings DESC")
+            "ORDER BY total_ratings DESC " +
+            "LIMIT 1")
     public List<CoActorsTotalRatings> getCoActorsBasedOnTotalRatings();
+
+    // ALTERNATIVE
+    @Query ("MATCH (actor:Individual)-[:PLAYED_IN]->(m:Movie)<-[:PLAYED_IN]-(coactor:Individual), (m)-[:HAS_RATING]->(r:Rating) " +
+            "WHERE ID(actor) < ID(coactor) AND m.title=\"Dial M for Murder\" OR m.title=\"Psycho\"" +
+            "RETURN actor, coactor, COUNT(r.rating) AS total_ratings " +
+            "ORDER BY total_ratings DESC " +
+            "LIMIT 1")
+    public List<CoActorsTotalRatings> getCoActorsBasedOnTotalRatingsAlternative();
 }

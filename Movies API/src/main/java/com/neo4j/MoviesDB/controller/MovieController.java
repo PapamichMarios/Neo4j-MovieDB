@@ -222,4 +222,12 @@ public class MovieController {
         List<CoActorsTotalRatings> coActorsBasedOnTotalRatings = this.movieService.getCoActorsBasedOnTotalRatings();
         return ResponseEntity.ok(coActorsBasedOnTotalRatings);
     }
+
+    // Query 18 Alternative
+    @GetMapping("/query18/alternative")
+    public ResponseEntity<?> getCoActorsBasedOnTotalRatingsAlternative() {
+
+        List<CoActorsTotalRatings> coActorsBasedOnTotalRatings = this.movieService.getCoActorsBasedOnTotalRatingsAlternative();
+        return ResponseEntity.ok(coActorsBasedOnTotalRatings);
+    }
 }

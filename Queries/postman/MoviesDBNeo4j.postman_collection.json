@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query1?name=Tom Hanks",
+					"raw": "http://localhost:8080/api/query1?name=Alfred Hitchcock",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -24,7 +24,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						}
 					]
 				},
@@ -38,7 +38,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query2?name=Tom Hanks&job=Director",
+					"raw": "http://localhost:8080/api/query2?name=Alfred Hitchcock&job=Director",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -51,7 +51,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						},
 						{
 							"key": "job",
@@ -98,7 +98,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query2?name=Tom Hanks&job=Writer",
+					"raw": "http://localhost:8080/api/query2?name=Alfred Hitchcock&job=Writer",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -111,7 +111,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						},
 						{
 							"key": "job",
@@ -128,7 +128,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query3?name=Tom Hanks&dateFrom=1990-10-30&dateTo=2020-10-30",
+					"raw": "http://localhost:8080/api/query3?name=Alfred Hitchcock&dateFrom=1950-10-30&dateTo=1960-10-30",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -141,15 +141,15 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						},
 						{
 							"key": "dateFrom",
-							"value": "1990-10-30"
+							"value": "1950-10-30"
 						},
 						{
 							"key": "dateTo",
-							"value": "2020-10-30"
+							"value": "1960-10-30"
 						}
 					]
 				}
@@ -162,7 +162,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query4/original?name=Tom Hanks",
+					"raw": "http://localhost:8080/api/query4/original?name=Alfred Hitchcock",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -176,7 +176,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						}
 					]
 				}
@@ -189,7 +189,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query4/spoken?name=Tom Hanks",
+					"raw": "http://localhost:8080/api/query4/spoken?name=Alfred Hitchcock",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -203,7 +203,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						}
 					]
 				}
@@ -296,7 +296,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query7?year=2014",
+					"raw": "http://localhost:8080/api/query7?year=1923",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -309,7 +309,7 @@
 					"query": [
 						{
 							"key": "year",
-							"value": "2014"
+							"value": "1923"
 						}
 					]
 				}
@@ -322,7 +322,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query8?year=2014",
+					"raw": "http://localhost:8080/api/query8?year=1923",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -335,7 +335,7 @@
 					"query": [
 						{
 							"key": "year",
-							"value": "2014"
+							"value": "1923"
 						}
 					]
 				}
@@ -348,7 +348,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query9?year=2014",
+					"raw": "http://localhost:8080/api/query9?year=1956",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -361,7 +361,7 @@
 					"query": [
 						{
 							"key": "year",
-							"value": "2014"
+							"value": "1956"
 						}
 					]
 				}
@@ -374,7 +374,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query10?name=Tom Hanks",
+					"raw": "http://localhost:8080/api/query10?name=Charlie Chaplin",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -387,7 +387,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Charlie Chaplin"
 						}
 					]
 				}
@@ -400,7 +400,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query11?name=Tom Hanks",
+					"raw": "http://localhost:8080/api/query11?name=Alfred Hitchcock",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -413,7 +413,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Tom Hanks"
+							"value": "Alfred Hitchcock"
 						}
 					]
 				}
@@ -476,7 +476,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/query14?yearsInBetween=5",
+					"raw": "http://localhost:8080/api/query14?yearsInBetween=40",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -489,7 +489,7 @@
 					"query": [
 						{
 							"key": "yearsInBetween",
-							"value": "5"
+							"value": "40"
 						}
 					]
 				}
@@ -615,6 +615,27 @@
 					"path": [
 						"api",
 						"query18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query 18 Alternative",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/query18/alternative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"query18",
+						"alternative"
 					]
 				}
 			},

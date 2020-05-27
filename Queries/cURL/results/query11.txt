@@ -1,0 +1,14 @@
+--> Query 11: curl --location --request GET 'http://localhost:8080/api/query11?name=Alfred%20Hitchcock'
+
+[
+    {
+        "id": 1041420,
+        "gender": 2,
+        "name": "Kent Jones"
+    },
+    {
+        "id": 54901,
+        "gender": 2,
+        "name": "André Singer"
+    }
+]
